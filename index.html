@@ -119,15 +119,127 @@
                     "fact": "GPT-4 demonstrates human-level performance in various academic and professional tests",
                     "year": 2023
                 },
-                // Add all 20 facts from the JSON here
+                {
+                    "id": 2,
+                    "title": "Quantum Computing",
+                    "fact": "IBM unveiled its 433-qubit Osprey processor, the world's largest superconducting quantum processor",
+                    "year": 2022
+                },
+                {
+                    "id": 3,
+                    "title": "Space Technology",
+                    "fact": "SpaceX's Starship became the largest and most powerful rocket ever launched",
+                    "year": 2023
+                },
+                {
+                    "id": 4,
+                    "title": "Electric Vehicles",
+                    "fact": "Solid-state batteries are being developed to potentially revolutionize EV charging times and range",
+                    "year": 2023
+                },
+                {
+                    "id": 5,
+                    "title": "5G Networks",
+                    "fact": "Global 5G adoption reached over 1 billion connections worldwide",
+                    "year": 2023
+                },
+                {
+                    "id": 6,
+                    "title": "Mixed Reality",
+                    "fact": "Apple introduced Vision Pro, its first mixed reality headset",
+                    "year": 2023
+                },
+                {
+                    "id": 7,
+                    "title": "Renewable Energy",
+                    "fact": "Perovskite solar cells achieved new efficiency records above 31%",
+                    "year": 2023
+                },
+                {
+                    "id": 8,
+                    "title": "Artificial Intelligence",
+                    "fact": "AI-powered drug discovery has reduced drug development time from years to months",
+                    "year": 2023
+                },
+                {
+                    "id": 9,
+                    "title": "Robotics",
+                    "fact": "Boston Dynamics' Atlas robot demonstrated advanced human-like movements and task completion",
+                    "year": 2023
+                },
+                {
+                    "id": 10,
+                    "title": "Cybersecurity",
+                    "fact": "Post-quantum cryptography standards are being developed to protect against quantum computer threats",
+                    "year": 2023
+                },
+                {
+                    "id": 11,
+                    "title": "Brain-Computer Interface",
+                    "fact": "Neuralink received FDA approval for human clinical trials",
+                    "year": 2023
+                },
+                {
+                    "id": 12,
+                    "title": "Green Technology",
+                    "fact": "Direct Air Capture facilities are scaling up to remove CO2 from the atmosphere",
+                    "year": 2023
+                },
+                {
+                    "id": 13,
+                    "title": "Edge Computing",
+                    "fact": "Edge computing market expected to reach $87.3 billion by 2026",
+                    "year": 2023
+                },
+                {
+                    "id": 14,
+                    "title": "Digital Health",
+                    "fact": "AI-powered diagnostic tools achieved accuracy rates exceeding 90% in various medical conditions",
+                    "year": 2023
+                },
+                {
+                    "id": 15,
+                    "title": "Autonomous Vehicles",
+                    "fact": "Self-driving taxis are operating in multiple cities without safety drivers",
+                    "year": 2023
+                },
+                {
+                    "id": 16,
+                    "title": "Web3",
+                    "fact": "Decentralized applications (dApps) reached over 4 million daily active users",
+                    "year": 2023
+                },
+                {
+                    "id": 17,
+                    "title": "Cloud Computing",
+                    "fact": "Sustainable cloud computing initiatives are reducing data center carbon footprints by 50%",
+                    "year": 2023
+                },
+                {
+                    "id": 18,
+                    "title": "Internet of Things",
+                    "fact": "Global IoT connections expected to reach 27 billion by 2025",
+                    "year": 2023
+                },
+                {
+                    "id": 19,
+                    "title": "Gene Editing",
+                    "fact": "CRISPR gene editing trials show promising results in treating genetic diseases",
+                    "year": 2023
+                },
+                {
+                    "id": 20,
+                    "title": "Augmented Reality",
+                    "fact": "AR smart glasses are becoming mainstream with multiple major tech companies launching products",
+                    "year": 2023
+                }
             ]
         };
 
         document.addEventListener('DOMContentLoaded', () => {
             const randomFactBtn = document.getElementById('randomFact');
             const showAllBtn = document.getElementById('showAll');
-            const factDisplay = document.getElementById('factDisplay');
-            const allFactsContainer = document.getElementById('allFacts');
+            const factDisplay = document.getElementById('factDisplay');FactsContainer = document.getElementById('allFacts');
             
             function showRandomFact() {
                 const facts = techFacts.tech_advancements;
@@ -170,3 +282,4 @@
     </script>
 </body>
 </html>
+
