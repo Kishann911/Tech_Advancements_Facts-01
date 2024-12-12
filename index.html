@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tech Advancements 2023</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: #f0f2f5;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 2rem;
+        }
+
+        .controls {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        button:hover {
+            background: #2980b9;
+        }
+
+        .fact-display {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+            min-height: 150px;
+        }
+
+        .fact-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .fact-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fact-card h3 {
+            color: #2c3e50;
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-card p {
+            color: #666;
+        }
+
+        .fact-card .year {
+            color: #3498db;
+            font-weight: bold;
+        }
+
+        .all-facts {
+            display: none;
+            grid-gap: 1rem;
+        }
+
+        .all-facts.show {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tech Advancements 2023</h1>
+        <div class="controls">
+            <button id="randomFact">Show Random Fact</button>
+            <button id="showAll">Show All Facts</button>
+        </div>
+        <div id="factDisplay" class="fact-display">
+            <p>Click a button to get started!</p>
+        </div>
+        <div id="allFacts" class="all-facts"></div>
+    </div>
+
+    <script>
+        const techFacts = {
+            "tech_advancements": [
+                {
+                    "id": 1,
+                    "title": "AI Language Models",
+                    "fact": "GPT-4 demonstrates human-level performance in various academic and professional tests",
+                    "year": 2023
+                },
+                // Add all 20 facts from the JSON here
+            ]
+        };
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const randomFactBtn = document.getElementById('randomFact');
+            const showAllBtn = document.getElementById('showAll');
+            const factDisplay = document.getElementById('factDisplay');
+            const allFactsContainer = document.getElementById('allFacts');
+            
+            function showRandomFact() {
+                const facts = techFacts.tech_advancements;
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                const fact = facts[randomIndex];
+                
+                factDisplay.innerHTML = `
+                    <h3>${fact.title}</h3>
+                    <p>${fact.fact}</p>
+                    <p class="year">Year: ${fact.year}</p>
+                `;
+            }
+            
+            function toggleAllFacts() {
+                if (allFactsContainer.classList.contains('show')) {
+                    allFactsContainer.classList.remove('show');
+                    allFactsContainer.innerHTML = '';
+                    showAllBtn.textContent = 'Show All Facts';
+                } else {
+                    allFactsContainer.classList.add('show');
+                    showAllBtn.textContent = 'Hide All Facts';
+                    
+                    const factsHTML = techFacts.tech_advancements
+                        .map(fact => `
+                            <div class="fact-card">
+                                <h3>${fact.title}</h3>
+                                <p>${fact.fact}</p>
+                                <p class="year">Year: ${fact.year}</p>
+                            </div>
+                        `)
+                        .join('');
+                    
+                    allFactsContainer.innerHTML = factsHTML;
+                }
+            }
+            
+            randomFactBtn.addEventListener('click', showRandomFact);
+            showAllBtn.addEventListener('click', toggleAllFacts);
+        });
+    </script>
+</body>
+</html>
